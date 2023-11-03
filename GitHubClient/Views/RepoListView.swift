@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RepoListView.swift
 //  GitHubClient
 //
 //  Created by 森匡人 on 2023/11/03.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RepoListView: View {
     private let mockRepos = [
         Repo(
             id: 1,
@@ -44,5 +44,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    RepoListView()
 }
