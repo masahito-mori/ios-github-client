@@ -38,18 +38,7 @@ struct ContentView: View {
     
     var body: some View {
         List(mockRepos) { item in
-            HStack {
-                Image("GitHubMark")
-                    .resizable()
-                    .frame(width: 44.0, height: 44.0)
-                VStack(alignment: .leading) {
-                    Text(item.owner.name)
-                        .font(.caption)
-                    Text(item.name)
-                        .font(.body)
-                        .fontWeight(.semibold)
-                }
-            }
+            RepoRow(repo: item)
         }
     }
 }
