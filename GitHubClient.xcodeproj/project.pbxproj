@@ -15,6 +15,8 @@
 		1BED36EB2AF4B56400A5D4F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36EA2AF4B56400A5D4F0 /* User.swift */; };
 		1BED36EE2AF4B7BB00A5D4F0 /* RepoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36ED2AF4B7BB00A5D4F0 /* RepoRow.swift */; };
 		1BED36F02AF4BA3100A5D4F0 /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36EF2AF4BA3100A5D4F0 /* RepoDetailView.swift */; };
+		1BED36F42AF67D2700A5D4F0 /* Repo+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36F32AF67D2700A5D4F0 /* Repo+mock.swift */; };
+		1BED36F62AF67D3600A5D4F0 /* User+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36F52AF67D3600A5D4F0 /* User+mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		1BED36EA2AF4B56400A5D4F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1BED36ED2AF4B7BB00A5D4F0 /* RepoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRow.swift; sourceTree = "<group>"; };
 		1BED36EF2AF4BA3100A5D4F0 /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
+		1BED36F32AF67D2700A5D4F0 /* Repo+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repo+mock.swift"; sourceTree = "<group>"; };
+		1BED36F52AF67D3600A5D4F0 /* User+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				1B3AE1632AF49F44008DB52D /* Preview Assets.xcassets */,
+				1BED36F52AF67D3600A5D4F0 /* User+mock.swift */,
+				1BED36F32AF67D2700A5D4F0 /* Repo+mock.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -166,10 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BED36EE2AF4B7BB00A5D4F0 /* RepoRow.swift in Sources */,
+				1BED36F42AF67D2700A5D4F0 /* Repo+mock.swift in Sources */,
 				1BED36EB2AF4B56400A5D4F0 /* User.swift in Sources */,
 				1BED36E92AF4B55900A5D4F0 /* Repo.swift in Sources */,
 				1BED36F02AF4BA3100A5D4F0 /* RepoDetailView.swift in Sources */,
 				1B3AE15F2AF49F42008DB52D /* RepoListView.swift in Sources */,
+				1BED36F62AF67D3600A5D4F0 /* User+mock.swift in Sources */,
 				1B3AE15D2AF49F42008DB52D /* GitHubClientApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,10 +27,6 @@ struct RepoRow: View {
 }
 
 #Preview {
-    let repo = Repo(
-        id: 1,
-        name: "Test Repo1",
-        owner: User(name: "Test User1")
-    )
+    let repo = Repo.mock1
     return RepoRow(repo: repo)
 }
