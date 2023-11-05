@@ -12,8 +12,21 @@ class ReposStore: ObservableObject {
     @Published private(set) var repos = [Repo]()
     
     func loadRepos() async {
-        try! await Task.sleep(nanoseconds: 1_000_000_000)
-        repos = [.mock1, .mock2, .mock3, .mock4, .mock5]
+        let url = URL(string: "https://api.github.com/users/masahito-mori/repos")!
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.allHTTPHeaderFields = [
+            "Accept": "application/vnd.github+json"
+        ]
+        // GitHub API のリクエスト数制限(60回/h)回避のためのキャッシュ設定
+        urlRequest.cachePolicy = .returnCacheDataElseLoad
+
+        let (data, _) = try! await URLSession.shared.data(for: urlRequest)
+        // デコード処理
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        repos = try! decoder.decode([Repo].self, from: data)
     }
 }
 
