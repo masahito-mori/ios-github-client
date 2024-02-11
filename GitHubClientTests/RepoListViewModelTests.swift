@@ -11,8 +11,11 @@ import XCTest
 @MainActor
 final class RepoListViewModelTests: XCTestCase {
     func test_onAppear_正常系() async {
-        let viewModel = RepoListViewModel(apiClient:
-            RepoAPIClinet(repos: [.mock1, .mock2])
+        let viewModel = RepoListViewModel(
+            apiClient: MockRepoAPIClinet(
+                repos: [.mock1, .mock2],
+                error: nil
+            )
         )
         
         await viewModel.onAppear()
@@ -25,11 +28,35 @@ final class RepoListViewModelTests: XCTestCase {
         }
     }
     
-    struct RepoAPIClinet: RepoAPIClientProtocol {
+    func test_onAppear_異常系() async {
+        let viewModel = RepoListViewModel(
+            apiClient: MockRepoAPIClinet(
+                repos: [],
+                error: DummyError()
+            )
+        )
+        
+        await viewModel.onAppear()
+        
+        switch viewModel.state {
+        case let .failed(error):
+            XCTAssert(error is DummyError)
+        default:
+            XCTFail()
+        }
+    }
+    
+    struct DummyError: Error {}
+    
+    struct MockRepoAPIClinet: RepoAPIClientProtocol {
         let repos: [Repo]
+        let error: Error?
         
         func getRepos() async throws -> [Repo] {
-            repos
+            if let error {
+                throw error
+            }
+            return repos
         }
     }
 }
