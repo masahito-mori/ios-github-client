@@ -7,7 +7,11 @@
 
 import Foundation
 
-class RepoAPIClinet {
+protocol RepoAPIClientProtocol {
+    func getRepos() async throws -> [Repo]
+}
+
+class RepoAPIClinet: RepoAPIClientProtocol {
     func getRepos() async throws -> [Repo] {
         let url = URL(string: "https://api.github.com/users/masahito-mori/repos")!
         

@@ -11,6 +11,12 @@ import Foundation
 class RepoListViewModel: ObservableObject {
     @Published private(set) var state: Stateful<[Repo]> = .loading
     
+    private let apiClient: RepoAPIClientProtocol
+    
+    init(apiClient: RepoAPIClientProtocol = RepoAPIClinet()) {
+        self.apiClient = apiClient
+    }
+    
     func onAppear() async {
         await loadRepos()
     }
@@ -23,7 +29,7 @@ class RepoListViewModel: ObservableObject {
         state = .loading
         
         do {
-            let value = try await RepoAPIClinet().getRepos()
+            let value = try await apiClient.getRepos()
             state = .loaded(value)
         } catch {
             state = .failed(error)
