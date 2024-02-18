@@ -14,7 +14,13 @@ enum Stateful<Value> {
 }
 
 struct RepoListView: View {
-    @StateObject private var viewModel = RepoListViewModel()
+    @StateObject private var viewModel: RepoListViewModel
+    
+    init(repoAPIClient: RepoAPIClientProtocol) {
+        _viewModel = StateObject(
+            wrappedValue: RepoListViewModel(apiClient: repoAPIClient)
+        )
+    }
     
     var body: some View {
         NavigationView {
@@ -26,8 +32,8 @@ struct RepoListView: View {
                     List(repos) { repo in
                         NavigationLink(
                             destination: RepoDetailView(repo: repo)) {
-                            RepoRow(repo: repo)
-                        }
+                                RepoRow(repo: repo)
+                            }
                     }
                 case .failed:
                     VStack {
@@ -54,6 +60,18 @@ struct RepoListView: View {
     }
 }
 
-#Preview {
-    RepoListView()
+#Preview("Default") {
+    RepoListView(repoAPIClient: MockRepoAPIClinet(
+        repos: [.mock1, .mock2, .mock3, .mock4, .mock5],
+        error: nil
+    )
+    )
+}
+
+#Preview("Error") {
+    RepoListView(repoAPIClient: MockRepoAPIClinet(
+        repos: [.mock1, .mock2, .mock3, .mock4, .mock5],
+        error: DummyError()
+    )
+    )
 }

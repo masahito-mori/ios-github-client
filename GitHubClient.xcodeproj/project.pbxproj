@@ -17,6 +17,7 @@
 		1BED36F02AF4BA3100A5D4F0 /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36EF2AF4BA3100A5D4F0 /* RepoDetailView.swift */; };
 		1BED36F42AF67D2700A5D4F0 /* Repo+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36F32AF67D2700A5D4F0 /* Repo+mock.swift */; };
 		1BED36F62AF67D3600A5D4F0 /* User+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED36F52AF67D3600A5D4F0 /* User+mock.swift */; };
+		3E93C8E22B78AEA4006F685B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E93C8E12B78AEA4006F685B /* Mocks.swift */; };
 		3EE15B2B2B78A31300BB72A9 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE15B2A2B78A31300BB72A9 /* RepoListViewModel.swift */; };
 		3EE15B2D2B78A36500BB72A9 /* RepoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE15B2C2B78A36500BB72A9 /* RepoAPIClient.swift */; };
 		3EE15B352B78A6F900BB72A9 /* RepoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE15B342B78A6F900BB72A9 /* RepoListViewModelTests.swift */; };
@@ -44,6 +45,7 @@
 		1BED36EF2AF4BA3100A5D4F0 /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
 		1BED36F32AF67D2700A5D4F0 /* Repo+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repo+mock.swift"; sourceTree = "<group>"; };
 		1BED36F52AF67D3600A5D4F0 /* User+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+mock.swift"; sourceTree = "<group>"; };
+		3E93C8E12B78AEA4006F685B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3EE15B2A2B78A31300BB72A9 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		3EE15B2C2B78A36500BB72A9 /* RepoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoAPIClient.swift; sourceTree = "<group>"; };
 		3EE15B322B78A6F900BB72A9 /* GitHubClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				1B3AE1632AF49F44008DB52D /* Preview Assets.xcassets */,
 				1BED36F52AF67D3600A5D4F0 /* User+mock.swift */,
 				1BED36F32AF67D2700A5D4F0 /* Repo+mock.swift */,
+				3E93C8E12B78AEA4006F685B /* Mocks.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E93C8E22B78AEA4006F685B /* Mocks.swift in Sources */,
 				1BED36EE2AF4B7BB00A5D4F0 /* RepoRow.swift in Sources */,
 				1BED36F42AF67D2700A5D4F0 /* Repo+mock.swift in Sources */,
 				1BED36EB2AF4B56400A5D4F0 /* User.swift in Sources */,
